@@ -1,10 +1,10 @@
-# 🩺 Predição de Diabetes com Machine Learning (Pima Indians Dataset)
+# Predição de Diabetes com Machine Learning (Pima Indians Dataset)
 
 Este projeto tem como objetivo aplicar **ciência de dados e aprendizado de máquina** para prever o risco de diabetes em mulheres, utilizando a base **Pima Indians Diabetes Dataset**. O pipeline inclui limpeza, categorização clínica, modelagem com Regressão Logística e Random Forest, além de análises visuais com **Power BI** e integração com **Databricks Delta Table**.
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 - Identificar os principais fatores de risco associados ao diagnóstico de diabetes
 - Criar um modelo preditivo utilizando algoritmos supervisionados
@@ -13,19 +13,19 @@ Este projeto tem como objetivo aplicar **ciência de dados e aprendizado de máq
 
 ---
 
-## 🧪 Pipeline do Projeto
+## Pipeline do Projeto
 
-### 1. 📥 Importação de Dados
+### 1. Importação de Dados
 
 - Leitura do arquivo `diabetes.csv`
 - Análise inicial com `df.info()`, `describe()`, e verificação de valores nulos ou atípicos
 
-### 2. 🛠️ Tratamento de Dados
+### 2. Tratamento de Dados
 
 - Substituição de valores **clinicamente inválidos** (como 0 em `Glucose`, `BMI`, etc.) por `NaN`
 - Imputação dos valores ausentes com **mediana** (mais robusta aos outliers)
 
-### 3. 🧠 Categorização Clínica
+### 3. Categorização Clínica
 
 - Criação de variáveis categóricas com base em faixas clínicas:
   - Faixa Etária (`Age_Low`, `Age_Med`, `Age_Risk`)
@@ -36,23 +36,21 @@ Este projeto tem como objetivo aplicar **ciência de dados e aprendizado de máq
   - Insulina (`Ins_Low`, `Ins_Med`, `Res_Ins`)
 - Geração de dummies para cada categoria
 
-### 4. 📊 Análise Exploratória
+### 4. Análise Exploratória
 
 - Criação de um **Heatmap de Correlação** para entender as relações entre variáveis
-  ![heatmap](inserir-caminho-ou-link-da-imagem-aqui)
-
 ---
 
-## 🤖 Modelagem Preditiva
+## Modelagem Preditiva
 
-### 🔷 Regressão Logística
+### Regressão Logística
 
 - Accuracy: **0.77**
 - Recall: **0.65**
 - F1-score: **0.67**
 - AUC: **0.82**
 
-### 🌲 Random Forest
+### Random Forest
 
 - Accuracy: **0.79**
 - Recall: **0.71**
@@ -61,21 +59,18 @@ Este projeto tem como objetivo aplicar **ciência de dados e aprendizado de máq
 
 ### 📈 Comparação Visual das Curvas ROC
 
-![roc_comparacao](inserir-caminho-ou-link-da-imagem-aqui)
+<img width="850" height="875" alt="image" src="https://github.com/user-attachments/assets/0d5ff707-823d-4851-a6da-7333a03f5f82" />
 
 ---
 
 ## 📊 Painel Power BI (Resumo Visual)
 
 Painel com KPIs, segmentações e gráficos por faixa etária, glicose, IMC e diagnóstico.  
-Os principais indicadores:
 
-- `% com Diabetes`
-- `% em Risco por Glicose`
-- `Média de Idade`
-- `% com IMC Elevado`
+<img width="1566" height="876" alt="image" src="https://github.com/user-attachments/assets/70a778f1-edb6-407f-9643-1f730c337ae2" />
 
-🎯 O painel foi construído usando a base final `diabetes_completo_para_BI.csv`, exportada do Databricks.
+
+O painel foi construído usando a base final `base_diabete.csv`, exportada do Databricks.
 
 ---
 
@@ -88,11 +83,11 @@ spark.createDataFrame(df).write \
     .mode("overwrite") \
     .saveAsTable('base_diabete')
 
-📁 Estrutura dos Arquivos
+Estrutura dos Arquivos
 | Arquivo                           | Descrição                            |
 | --------------------------------- | ------------------------------------ |
 | `Projeto_Predicao_Diabetes.ipynb` | Notebook com todo o pipeline         |
-| `diabetes_completo_para_BI.csv`   | Base tratada e categorizada para BI  |
+| `base_diabete.csv`   | Base tratada e categorizada para BI  |
 | `README.md`                       | Documentação do projeto              |
 | `base_diabete` (Databricks)       | Tabela Delta SQL com os dados finais |
 
