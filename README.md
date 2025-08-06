@@ -57,13 +57,13 @@ Este projeto tem como objetivo aplicar **ciência de dados e aprendizado de máq
 - F1-score: **0.70**
 - AUC: **0.82**
 
-### 📈 Comparação Visual das Curvas ROC
+### Comparação Visual das Curvas ROC
 
 <img width="850" height="875" alt="image" src="https://github.com/user-attachments/assets/0d5ff707-823d-4851-a6da-7333a03f5f82" />
 
 ---
 
-## 📊 Painel Power BI (Resumo Visual)
+## Painel Power BI (Resumo Visual)
 
 Painel com KPIs, segmentações e gráficos por faixa etária, glicose, IMC e diagnóstico.  
 
@@ -74,7 +74,7 @@ O painel foi construído usando a base final `base_diabete.csv`, exportada do Da
 
 ---
 
-## 💾 Integração com Databricks (Delta Table)
+## Integração com Databricks (Delta Table)
 
 Exportação final do DataFrame como tabela Delta SQL:
 
@@ -86,12 +86,13 @@ spark.createDataFrame(df).write \
 Estrutura dos Arquivos
 | Arquivo                           | Descrição                            |
 | --------------------------------- | ------------------------------------ |
-| `Projeto_Predicao_Diabetes.ipynb` | Notebook com todo o pipeline         |
-| `base_diabete.csv`   | Base tratada e categorizada para BI  |
+| `Projeto_ML_Diabetes.ipynb`       | Notebook com todo o pipeline         |
+| `base_diabete.csv`                | Base tratada e categorizada para BI  |
 | `README.md`                       | Documentação do projeto              |
 | `base_diabete` (Databricks)       | Tabela Delta SQL com os dados finais |
+| `BI_Diabetes` (Power BI)          | Dashboard em Power BI com as analises|
 
-📚 Dataset Original
+Dataset Original
     Fonte: Kaggle – Pima Indians Diabetes Dataset
     Atributos: glicose, pressão, idade, IMC, hereditariedade, número de gestações
 
